@@ -19,7 +19,7 @@ def update_inventory(inventory:dict):
             print(f"The updated quantity of Laptop is:{test}")
             return inventory[key]
     else:
-        confirm = input(f"{key} is not in the inventory. Would you like to add it? (y/n):").lower()
+        confirm = input(f"{key} is not in the inventory. Would you like to add it? (y/n):")
         if confirm.lower() == "y" :
             value = int(input("Enter the quantity to add or subtract:"))
             return inventory.setdefault(key,value)
