@@ -8,7 +8,7 @@ def display_inventory(inventory:dict):
         
 
 def update_inventory(inventory:dict):
-    key = input("Enter the product name you want to update:")
+    key = input("Enter the product name you want to update:").title()
     if key in inventory:
         value = int(input("Enter the quantity to add or subtract:"))
         test = inventory[key] + value
@@ -19,14 +19,14 @@ def update_inventory(inventory:dict):
             print(f"The updated quantity of Laptop is:{test}")
             return inventory[key]
     else:
-        confirm = input(f"{key} is not in the inventory. Would you like to add it? (y/n):")
+        confirm = input(f"{key} is not in the inventory. Would you like to add it? (y/n):").lower()
         if confirm.lower() == "y" :
             value = int(input("Enter the quantity to add or subtract:"))
             return inventory.setdefault(key,value)
     
 def delete_inventory(inventory:dict):
-    key = input("Enter the product name you want to delete:")
-    confirm = input("Are you sure you want to delete Tablet? (y/n):")
+    key = input("Enter the product name you want to delete:").title()
+    confirm = input("Are you sure you want to delete Tablet? (y/n):").lower()
     if key in inventory :
         if confirm.lower() == "y" :
             del inventory[key]
