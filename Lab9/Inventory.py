@@ -52,3 +52,5 @@ while True :
             delete_inventory(products)
         case "4":
             break
+        case _:
+            print("what ")
